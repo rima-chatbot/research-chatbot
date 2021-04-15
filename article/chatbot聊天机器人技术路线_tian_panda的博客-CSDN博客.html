@@ -1,0 +1,1740 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://blog.csdn.net/tian_panda/article/details/80664578"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="report" content='{"pid": "blog", "spm":"1001.2101"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <meta name="applicable-device" content="pc">
+    <link  href="https://g.csdnimg.cn/static/logo/favicon32.ico"  rel="shortcut icon" type="image/x-icon" />
+    <title>chatbot聊天机器人技术路线_tian_panda的博客-CSDN博客</title>
+    <script>
+      (function(){ 
+        var el = document.createElement("script"); 
+        el.src = "https://s3a.pstatp.com/toutiao/push.js?1abfa13dfe74d72d41d83c86d240de427e7cac50c51ead53b2e79d40c7952a23ed7716d05b4a0f683a653eab3e214672511de2457e74e99286eb2c33f4428830"; 
+        el.id = "ttzz"; 
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(el, s);
+      })(window)
+    </script>
+        <meta name="keywords" content="chatbot聊天机器人技术路线">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"chatbot聊天机器人技术路线"}'>
+    <meta name="description" content="聊天机器人实现的技术途径大约可分为以下4种：（其中第一种是属于“调用第三方API”，也就是说核心代码和数据库不掌握在自己手里）（第二、三、四种属于开源框架，也就是说我们可以下载其源码，采用，相对快速的自己搭建一个聊天机器人，核心代码和数据库都掌握在自己手里）http://homepage.fudan.edu.cn/zhengxq/deeplearning/一、调用第三方API实现的聊天机器人 （仅...">
+    <script src="//g.csdnimg.cn/tingyun/1.8.5/blog.js" type='text/javascript'></script>
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/css/detail_enter-0a51b236a9.min.css">
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin-blackboard/skin-blackboard-3adcc2c475.min.css">
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var isCorporate = false;//注释删除enterprise
+        var username =  "tian_panda";
+        var skinImg = "white";
+        var blog_address = "https://blog.csdn.net/tian_panda";
+        var currentUserName = "fengmao31";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/tian_panda/article/details/80664578";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile.csdnimg.cn/1/6/9/3_tian_panda";
+        var articleTitle = "chatbot聊天机器人技术路线";
+        var articleDesc = "聊天机器人实现的技术途径大约可分为以下4种：（其中第一种是属于“调用第三方API”，也就是说核心代码和数据库不掌握在自己手里）（第二、三、四种属于开源框架，也就是说我们可以下载其源码，采用，相对快速的自己搭建一个聊天机器人，核心代码和数据库都掌握在自己手里）http://homepage.fudan.edu.cn/zhengxq/deeplearning/一、调用第三方API实现的聊天机器人 （仅...";
+        var articleTitles = "chatbot聊天机器人技术路线_tian_panda的博客-CSDN博客";
+        var nickName = "tian_panda";
+        var articleDetailUrl = "https://blog.csdn.net/tian_panda/article/details/80664578";
+        if(window.location.host.split('.').length == 3) {
+            blog_address = blogUrl + username;
+        }
+        var skinStatus = "White";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+    </script>
+    <script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js" type="text/javascript"></script>
+    <script src='//g.csdnimg.cn/common/csdn-report/report.js' type='text/javascript'></script>
+    <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+    <script src="https://dup.baidustatic.com/js/ds.js"></script>
+</head>
+<body class="nodata " style="">
+        <script>
+            var toolbarSearchExt = '{"landingWord":[],"queryWord":"chatbot聊天机器人技术路","tag":[],"title":"chatbot聊天机器人技术路线"}';
+        </script>
+    <script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/pc/css/blog_code-01256533b5.min.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/chart-3456820cac.css" />
+<div class="main_father clearfix d-flex justify-content-center" style="height:100%;"> 
+    <div class="container clearfix" id="mainBox">
+        <main>
+<script type="text/javascript">
+    var blogSensitiveWords = "";
+    function getQueryString(name) {   
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象  
+      var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+      if( r != null ) return decodeURIComponent( r[2] ); return '';   
+    }
+    function stripscript(s){ 
+      var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]") 
+      var rs = ""; 
+      for (var i = 0; i < s.length; i++) { 
+        rs = rs+s.substr(i, 1).replace(pattern, ''); 
+      } 
+      return rs; 
+    }
+    var blogHotWords = stripscript(getQueryString('utm_term')).length > 1 ? stripscript(getQueryString('utm_term')) : ''
+</script>
+<div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <h1 class="title-article" id="articleContentId">chatbot聊天机器人技术路线</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                    <img class="article-type-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png" alt="">
+                    <div class="bar-content">
+                    <a class="follow-nickName " href="https://blog.csdn.net/tian_panda" target="_blank" rel="noopener">tian_panda</a>
+                    <span class="time">2018-06-12 14:12:27</span>
+                    <img class="article-read-img article-heard-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png" alt="">
+                    <span class="read-count">3469</span>
+                    <a id="blog_detail_zk_collection" class="un-collection" data-report-click='{"mod":"popu_823","spm":"1001.2101.3001.4232","ab":"new"}'>
+                        <img class="article-collect-img article-heard-img un-collect-status isdefault" style="display:inline-block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" alt="">
+                        <img class="article-collect-img article-heard-img collect-status isactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" alt="">
+                        <span class="name">收藏</span>
+                        <span class="get-collection">
+                            8
+                        </span>
+                    </a>
+                    </div>
+                </div>
+                <div class="blog-tags-box">
+                    <div class="tags-box artic-tag-box">
+                            <span class="label">分类专栏：</span>
+                                <a class="tag-link" href="https://blog.csdn.net/tian_panda/category_7712240.html" target="_blank" rel="noopener">人工智能</a>
+                                <a class="tag-link" href="https://blog.csdn.net/tian_panda/category_7771735.html" target="_blank" rel="noopener">NLP</a>
+                    </div>
+                </div>
+                <div class="slide-content-box">
+                    <div class="article-copyright">
+                        <div class="creativecommons">
+                            版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。
+                        </div>
+                        <div class="article-source-link">
+                            本文链接：<a href="https://blog.csdn.net/tian_panda/article/details/80664578" target="_blank">https://blog.csdn.net/tian_panda/article/details/80664578</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="operating">
+                    <a class="href-article-edit slide-toggle">版权</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="csdn-shop-window-top" class="csdn-shop-window-common" style="margin-top:18px;padding:0"></div>
+    <article class="baidu_pl">
+        <div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-b5506197d8.css">
+                <div id="content_views" class="htmledit_views">
+                    聊天机器人实现的技术途径大约可分为以下4种&#xff1a;
+<br />&#xff08;其中第一种是属于“调用第三方API”&#xff0c;也就是说核心代码和数据库不掌握在自己手里&#xff09;&#xff08;第二、三、四种属于开源框架&#xff0c;也就是说我们可以下载其源码&#xff0c;采用&#xff0c;相对快速的自己搭建一个聊天机器人&#xff0c;核心代码和数据库都掌握在自己手里&#xff09;
+<br />http://homepage.fudan.edu.cn/zhengxq/deeplearning/
+<br />
+<br />
+<br />
+<br />一、调用第三方API实现的聊天机器人 &#xff08;仅以作为技术对比参考&#xff09;
+<br />1.图灵机器人
+<br />https://baike.baidu.com/item/%E5%9B%BE%E7%81%B5%E6%9C%BA%E5%99%A8%E4%BA%BA/18145183?fr&#61;aladdin
+<br />http://www.tuling123.com/products/pro_turing_robot.jhtml?nav&#61;prod
+<br />
+<br />
+<br />2.api.ai
+<br />    网址&#xff1a;https://api.ai/
+<br />    机构/作者&#xff1a;Google
+<br />    流行程度&#xff1a;24,600,000
+<br />    简介&#xff1a;Google收购的一家AI公司&#xff0c;和wit.ai类似。提供了一个AI的框架&#xff0c;可以自己定义模板&#xff0c;参数&#xff0c;多轮对话&#xff0c;很方便的就可以定义一个自己的特定任务的聊天机器人。
+<br />https://www.leiphone.com/news/201608/u9IUSwabPaPZvD5r.html
+<br />
+<br />
+<br />
+<br />
+<br />3.Messenger Platform
+<br />    网址&#xff1a;https://developers.facebook.com/docs/messenger-platform
+<br />    机构/作者&#xff1a;Facebook
+<br />    流行程度&#xff1a;22,700,000
+<br />    简介&#xff1a;和Micros Bot Framework 是同类东西。他可以方便用户配置自己的机器人。例如某用户在网络上卖自己的商品&#xff0c;如果咨询太多的话&#xff0c;需要很多客服人员&#xff0c;它可以方便的配置一个客服机器人。
+<br />
+<br />
+<br />
+<br />4.
+<br />http://www.cleverscript.com/about/
+<br />
+<br />
+<br />二、基于AIML技术实现的聊天机器人 (即手工编辑对话库规则&#xff1a;当问题中出现什么关键词----类似正则表达式----&#xff0c;则回答哪句预置答案)
+<br />
+<br />1.AIML &#xff08;Artificial Intelligence Markup Language&#xff09;基础
+<br />    网址&#xff1a;http://www.alicebot.org/
+<br />    机构/作者&#xff1a;Dr. Richard S. Wallace
+<br />    流行程度&#xff1a;283,000
+<br />    简介&#xff1a;这是一个自定义的AI语言&#xff0c;是XML语言的扩展&#xff0c;支持语言规约&#xff0c;开源了解析器&#xff0c;支持主流的所有编程语言。
+<br />
+<br />
+<br />http://geek.csdn.net/news/detail/107645?locationNum&#61;11&amp;fps&#61;1
+<br />
+<br />
+<br />
+<br />
+<br />2.python aiml
+<br />https://www.dssz.com/2829799.html
+<br />https://www.zhihu.com/question/19651613
+<br />https://www.urlteam.org/2016/01/python-aiml%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%EF%BC%8B%E7%99%BE%E5%BA%A6%E8%AF%AD%E9%9F%B3%E5%AF%B9%E8%AF%9D/
+<br />http://blog.csdn.net/golearn/article/details/50373580
+<br />http://blog.csdn.net/tobacco5648/article/details/50595396
+<br />https://www.biaodianfu.com/python-aiml.html
+<br />http://python.jobbole.com/82007/
+<br />https://pypi.python.org/pypi/python-aiml/0.9.0
+<br />https://yq.aliyun.com/ziliao/25421
+<br />https://www.jianshu.com/p/d6230f63402a
+<br />http://www.jb51.net/article/78789.htm
+<br />
+<br />
+<br />
+<br />
+<br />3.AIML
+<br />http://study.163.com/course/courseLearn.htm?courseId&#61;1005049028#/learn/video?lessonId&#61;1051673662&amp;courseId&#61;1005049028 
+<br />
+<br />
+<br />
+<br />
+<br />4.Rasa Core
+<br />https://blog.csdn.net/love_is_red/article/details/79145979
+<br />
+<br />
+<br />
+<br />
+<br />5.AIML
+<br />https://blog.csdn.net/wxlfight/article/details/8093792
+<br />
+<br />
+<br />
+<br />
+<br />6.AliceBot
+<br />https://blog.csdn.net/a_piaoyouareminemine/article/details/50151599
+<br />https://my.oschina.net/dancing/blog/161700
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />三、基于机器学习的聊天机器人 &#xff08;重点&#xff09;
+<br />1.python chatterbot
+<br />第3课-机器学习构建聊天机器人
+<br />ChatterBot
+<br />    网址&#xff1a;https://github.com/gunthercox/ChatterBot
+<br />    机构/作者&#xff1a;Gunther Cox
+<br />    流行程度&#xff1a;206,000
+<br />    简介&#xff1a;这是一个闲聊系统&#xff0c;Python语言&#xff0c;基于检索方式&#xff0c;不适用于基于任务的对话系统。
+<br />https://blog.csdn.net/hfutdog/article/details/78155467
+<br />
+<br />
+<br />
+<br />
+<br />四、任务式聊天机器人 &#xff08;AIML&#43;外部系统功能/API调用&#xff09; &#xff08;采用opendial&#xff0c;重点&#xff09;
+<br />1.http://study.163.com/course/courseLearn.htm?courseId&#61;1005049028#/learn/video?lessonId&#61;1051673662&amp;courseId&#61;1005049028
+<br />2.  opendial 
+<br />    网址&#xff1a;http://www.opendial-toolkit.net/
+<br />    机构/作者&#xff1a;Lison, P.
+<br />    流行程度&#xff1a;147,000
+<br />    简介&#xff1a;有较好的澄清机制&#xff0c;基于规则的系统&#xff0c;没有太多的机器学习和深度学习技术&#xff0c;在参数调节部分用到了机器学习技术。
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />五、多轮对话&#xff08;即上下文记忆&#xff09;聊天机器人&#xff08;即  记住用户上句话和上上句话&#xff09;&#xff08;状态标志器变量&#43;AIML&#xff09; &#xff08;采用opendial&#xff0c;重点&#xff09;
+<br />1.http://study.163.com/course/courseLearn.htm?courseId&#61;1005049028#/learn/video?lessonId&#61;1051673662&amp;courseId&#61;1005049028
+<br />
+<br />
+<p>2.https://www.douban.com/note/635914266/?from&#61;tag</p>
+<p>3 https://github.com/zhangziliang04/kgRobot</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />六、基于深度学习的聊天机器人 &#xff08;重点&#xff09;
+<br />1.一位大神的framework&#xff0c;具体而详尽
+<br />https://github.com/qhduan/Seq2Seq_Chatbot_QA
+<br />https://github.com/qhduan/just_another_seq2seq
+<br />
+<br />
+<br />2.另一位牛人的工作
+<br />http://www.shareditor.com/blogshow?blogId&#61;121
+<br />
+<br />
+<br />
+<br />
+<br />3.deepQA2等十个框架 &#xff08;仅简介、需详细了解和斟酌&#xff09;&#xff08;我这边先调研一下&#xff09;
+<br />https://github.com/fateleak/awesome-chatbot-list
+<br />
+<br />
+<br />4.《06-自动聊天机器人项目班》中“深度学习聊天机器人”部分&#xff08;视频课程&#43;代码&#xff0c;可直接部署&#xff09;
+<br />
+<br />5.《06-自动聊天机器人项目班》中“VQA”部分&#xff08;视频课程&#43;代码&#xff0c;可直接部署&#xff09;
+<br />
+<br />
+<br />6.deepQA2
+<br />https://blog.csdn.net/u013378306/article/details/55213619
+<br />https://www.leiphone.com/news/201702/4OZau7OfcNO0v1u5.html
+<br />https://www.v2ex.com/t/388328
+<br />https://github.com/Conchylicultor/DeepQA
+<br />http://news.163.com/16/0325/17/BJ14NPAA000146BE.html
+<br />
+<br />
+<br />
+<br />
+<br />7.tensorflow chatbot
+<br />https://blog.csdn.net/hfutdog/article/details/78155467
+<br />
+<br />
+<br />8.&#xff08;another&#xff09;seq2seq
+<br />http://36kr.com/p/5089608.html
+<br />
+<br />
+<br />
+<br />9.FudanDNN-NLP4.0
+<br />http://homepage.fudan.edu.cn/zhengxq/deeplearning/
+<br />
+<br />
+<br />
+<br />七、基于信息检索的聊天机器人
+<br />1.AIML&#43;FUSEKI知识库系统
+<br />http://study.163.com/course/courseLearn.htm?courseId&#61;1005049028#/learn/video?lessonId&#61;1051673662&amp;courseId&#61;1005049028
+<br />
+<br />
+<br />
+<br />
+<br />2.Lucene
+<br />http://www.shareditor.com/blogshow?blogId&#61;113
+<br />
+<br />
+<br />
+<br />
+<br />3.MITIE&#43;AliceBot&#43;DB
+<br />https://blog.csdn.net/wangyangzhizhou/article/details/79245144
+<br />
+<br />
+<br />4.AIML&#61;DB
+<br />https://blog.csdn.net/wxlfight/article/details/8093792
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />八、API、wx&#43;chatbot
+<br />《聊天机器人技术概述.doc》
+<br />
+<br />
+<br />利用Tornado可以很方便地搭建一个web接口的聊天机器人。具体的代码可以在此链接下在&#xff1a;web接口的聊天机器人。 
+<br />下载此代码之后直接运行main.py即可&#xff0c;然后可以通过浏览器访问url与聊天机器人&#xff0c;url类似http://localhost/aiml?req&#61;hello的形式&#xff08;req参数即为发给机器人的信息&#xff09;。 
+<br />注意要运行此代码&#xff0c;需要安装Python 的aiml与Tornado库。 
+<br />lwons.com上已经搭建了这样的web接口&#xff0c;可以访问http://lwons.com/aiml?req&#61;hello来测试下。
+<br />https://blog.csdn.net/tobacco5648/article/details/50595396
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />九、BAT和其他大公司自己用的不开源的聊天机器人(别人不能调用API、也不能下载源码框架)&#xff08;因此不用特别关注&#xff09;
+<br />1.度秘
+<br />
+<br />
+<br />2. wit.ai
+<br />    网址&#xff1a;https://wit.ai
+<br />    机构/作者&#xff1a;Facebook
+<br />    流行程度&#xff1a;351,000,000
+<br />    简介&#xff1a;是所有框架中最流程的一个&#xff0c;有非常好的二次开放库&#xff0c;duckling.wit.ai是非常好的时间识别库。wit.ai并不开源的&#xff0c;但是二次库很多事开源的&#xff0c;详见github上面的二次开发库。
+<br />
+<br />
+<br />
+<br />
+<br />3.Language Understanding Intelligent Service (LUIS)
+<br />    网址&#xff1a;https://www.luis.ai/
+<br />    机构/作者&#xff1a;Microsoft
+<br />    流行程度&#xff1a;8,020,000
+<br />    简介&#xff1a;和wit.ai&#xff0c;api.ai类似&#xff0c;是微软在这方面的一个产品。
+<br />
+<br />
+<br />4.Microsoft Bot Framework
+<br />    网址&#xff1a;https://dev.botframework.com/
+<br />    机构/作者&#xff1a;Microsoft
+<br />    流行程度&#xff1a;532,000
+<br />    简介&#xff1a;这是一个应用层的框架&#xff0c;里面用到的技术是luis.ai和微软的其他人工智能技术。
+<br />
+<br />
+<br />
+<br />
+<br />5. viv 
+<br />    网址&#xff1a;http://viv.ai/
+<br />    机构/作者&#xff1a;Siri之父&#xff0c;三星收购
+<br />    流行程度&#xff1a;61,200,000
+<br />    简介&#xff1a;准确来说&#xff0c;其不算是一个框架&#xff0c;没有开源&#xff0c;也还没有产品出来。据其作者宣城&#xff0c;其特点是&#xff0c;采用了计算机动态自动编程技术&#xff0c;不用再硬编码了。
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />十、参考资料
+<br />
+<br />
+<br />这个网址中列出了一些聊天机器人&#xff08;各种技术路线的都有&#xff09;
+<br />http://blog.csdn.net/xmsheji/article/details/53610656
+<br />这个网址中列出了很多深度学习的聊天机器人
+<br />https://github.com/fateleak/awesome-chatbot-list
+<br />
+<br />
+<br />
+<br />注&#xff1a; 其中study.163.com上的课程已买&#xff0c;远程登录即可。
+<br />
+<br />
+<br />
+<br />十一、增量训练  &#xff08;俗称tiaoj&#xff09;
+<br />https://baike.baidu.com/item/%E5%A4%A9%E6%89%8D%E7%90%AA%E9%9C%B2%E8%AF%BA/4161424?fr&#61;aladdin
+<br />http://www.cleverbot.com/
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />十二、进阶
+<br />https://www.zhihu.com/question/20060159
+                </div>
+        </div>
+    </article>
+</div>
+            <div id="csdn-shop-window" class="csdn-shop-window-common"></div>
+<div class="more-toolbox" id="toolBarBox">
+    <span id="fixedBar"></span>
+    <div class="left-toolbox">
+        <ul class="toolbox-list">
+            <li class="tool-item tool-item-size tool-active is-like" id="is-like"><a>
+            <img style="display:none;" id="is-like-imgactive-animation-like" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" alt="">
+            <img class="isactive" style="display:none" id="is-like-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" alt="">
+            <img class="isdefault" style="display:block" id="is-like-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUp.png" alt="">   
+            <span class="name" id="is-like-span">点赞</span>
+            <span id="spanCount" class="count">
+                    3
+            </span>
+            </a></li>
+            <li class="tool-item tool-item-size tool-active tool-item-comment">
+                <a href="#commentBox">
+                    <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarComment.png" alt="">
+                    <img class="isactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCommentactive.png" style="display:none;" alt="">
+                    <span class="name">评论</span>
+                    <span class="count">
+                    </span>
+                </a>
+            </li>
+            <li class="tool-item tool-item-size tool-active tool-QRcode" id="tool-share">
+                <a href="javascript:;" data-report-click='{"mod":"1582594662_002","spm":"1001.2101.3001.4129","ab":"new"}'>
+                    <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarShare.png" alt="">
+                    <img class="isactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarShareactive.png" style="display:none;" alt="">
+                    <span class="name">分享</span>
+                </a>
+                <div class="QRcode" id="tool-QRcode" style="left:-92%;">
+                    <span id="QRcode-close">x</span>
+                    <p class="title">
+                    海报分享
+                    </p>
+                    <div id='shareCode'></div>
+                    <p>
+                    扫一扫，分享海报
+                    </p>
+                </div>
+            </li>
+            <li class="tool-item tool-item-size tool-active is-collection ">
+                <a href="javascript:;" data-report-click='{"mod":"popu_824","spm":"1001.2101.3001.4130","ab":"new"}'>
+                    <img style="display:none" id="is-collection-img-collection" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" alt="">
+                    <img class="isdefault" id="is-collection-img" style="display:block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" alt="">
+                    <img class="isactive" id="is-collection-imgactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" alt="">
+                    <span class="name" id="is-collection">收藏</span>
+                    <span class="count get-collection" id="get-collection">
+                        8
+                    </span>
+                </a>
+            </li>
+            <li class="tool-item tool-item-size tool-active tool-reward">
+                <a  id="toolreward" data-report-click='{"mod":"popu_830","spm":"1001.2101.3001.4237","dest":"","ab":"new"}'>
+                    <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarReward.png" alt="">
+                    <img class="isactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarRewardactive.png" style="display:none;" alt="">
+                    <span class="name">打赏</span>
+                </a>
+<div id="reward" class="reward-box">
+	<p class="rewad-title">打赏<span class="reward-close"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span></p>
+	<dl>
+		<dd>
+		<a href="https://blog.csdn.net/tian_panda" data-report-click='{"mod":"popu_379","dest":"https://blog.csdn.net/tian_panda","ab":"new"}'>
+			<img src="https://profile.csdnimg.cn/1/6/9/3_tian_panda" class="avatar_pic">
+		</a>
+		</dd>
+		<dt>
+			<p class="blog-name">tian_panda</p>
+			<p class="blog-discript">你的鼓励将是我创作的最大动力</p>
+		</dt>
+	</dl>
+	<div class="change-bt-box">
+		<span class="reward-bt reward-bt-coin">C币</span>
+		<span class="reward-bt-space"></span>
+		<span class="reward-bt reward-bt-money reward-bt-active">余额</span>
+	</div>
+	<div class="money-box">
+			<span class="choose_money choosed" data-id="2">2C币</span>
+			<span class="choose_money " data-id="4">4C币</span>
+			<span class="choose_money " data-id="6">6C币</span>
+			<span class="choose_money " data-id="10">10C币</span>
+			<span class="choose_money " data-id="20">20C币</span>
+			<span class="choose_money " data-id="50">50C币</span>
+	</div>
+	<div class="sure-box">
+		<p class="is-have-money"><a class="reward-sure">确定</a></p>
+	</div>
+</div>
+            </li>
+            <li class="tool-item tool-item-size tool-active tool-more">
+              <a class="article-report">
+                <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarReport.png" alt="">
+                <img class="isactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarReportactive.png" style="display:none;" alt="">
+                <span class="name">举报</span>
+              </a>
+            </li>
+            <li class="tool-item">
+                    <a class="tool-attend tool-bt-button tool-bt-attend" href="javascript:;" data-report-view='{"mod":"1592215036_002","spm":"1001.2101.3001.4232","extend1":"关注"}'>关注</a>
+                <a class="tool-item-follow active-animation" style="display:none;">关注</a>
+            </li>
+            <li class="tool-item">
+                    <p class="company active" id="health-companies" href="javascript:;" >一键三连</p>
+                <span class="triplet-prompt">点赞Mark关注该博主, 随时了解TA的最新博文<img class="close-prompt" src="https://csdnimg.cn/release/blogv2/dist/pc/img/closePrompt.png"></span>
+            </li>
+        </ul>
+        <div style="display:flex">
+         </div>
+         <div class="hot-word-tip-box">
+          <span class="hot-word-text">已标记关键词</span>
+          <span class="hot-word-count"></span> 
+          <span class="hot-word-bar"></span>
+          <span class="hot-word-clear">清除标记</span>
+        </div>
+    </div>  
+</div>
+<script type=text/javascript crossorigin src="https://csdnimg.cn/release/phoenix/production/qrcode-7c90a92189.min.js"></script>
+<script src="//g.csdnimg.cn/??sharewx/1.2.1/sharewx.js" type="text/javascript"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/collection-box/2.0.3/collection-box.js"></script>
+                <div class="first-recommend-box recommend-box">
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/zzz_cming/10575274"  data-report-view='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-1.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"1","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/zzz_cming/10575274"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/zzz_cming/10575274" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-1.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"1","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/zzz_cming/10575274"}'  data-report-query='utm_medium=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs'>
+					中文<em>聊天</em><em>机器人</em><em>chatbot</em>源码
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">07-31</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/zzz_cming/10575274" target="_blank"  data-report-click='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-1.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"1","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/zzz_cming/10575274"}'  data-report-query='utm_medium=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">本文是依赖jieba分词构成中文字典，写成的中文<em>聊天</em><em>机器人</em>，本文是依赖jieba分词构成中文字典，写成的中文<em>聊天</em><em>机器人</em>，本文是依赖jieba分词构成中文字典，写成的中文<em>聊天</em><em>机器人</em></div>
+			</a>
+		</div>
+	</div>
+</div>
+                </div>
+            <div class="second-recommend-box recommend-box">
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/zzZ_CMing/article/details/81316033"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"1","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/zzZ_CMing/article/details/81316033"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/zzZ_CMing/article/details/81316033" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"1","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/zzZ_CMing/article/details/81316033"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs'>
+					【<em>Chatbot</em>】2：中文<em>聊天</em><em>机器人</em>的实现
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/zzZ_CMing" target="_blank"><span class="blog-title">zzZ_CMing的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-31</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					9650
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/zzZ_CMing/article/details/81316033" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"1","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/zzZ_CMing/article/details/81316033"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">前言：
+
+上一篇【<em>聊天</em><em>机器人</em>】1：DeepQA使用自己的数据集做<em>chatbot</em>上传后，收到了好多伙伴支持，在这里表示感谢。上一篇也遗留了一个问题&mdash;&mdash;介于DeepQA是一个以英文语料为场景的<em>聊天</em><em>机器人</em>，在中文场景应用中得到的结果却不尽人意。于是经过多方查找及资料整理，今天给大家分享一个以自己制作的语料集作为背景数据集的中文<em>聊天</em><em>机器人</em>，源码也是无偿奉上供大家参考，感谢大家支持。
+
+&ndash;&mdash;-&mdash;-&mdash;-&mdash;-&mdash;...</div>
+			</a>
+		</div>
+	</div>
+</div>
+            </div>
+<a id="commentBox" name="commentBox"></a>
+<div class="comment-box">
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="https://blog.csdn.net/fengmao31" target="_blank">
+				<img class="" src="https://profile.csdnimg.cn/0/F/2/3_fengmao31">
+			</a>
+		</div>
+		<form id="commentform">
+			<img class="comment-sofa-flag" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentFlag@2x.png">
+      <textarea class="comment-content" name="comment_content" id="comment_content" placeholder="优质评论可以帮助作者获得更高权重" maxlength="1000"></textarea>
+			<div class="comment-emoticon"><img class="comment-emoticon-img" data-url="https://csdnimg.cn/release/blogv2/dist/pc/img/" src="https://csdnimg.cn/release/blogv2/dist/pc/img/emoticon.png" alt="表情包"></div> 
+      <span class="comment-emoticon-tip">插入表情</span>
+      <div class="comment-emoticon-box">
+        <div class="comment-emoticon-img-box">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:001.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/001.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:002.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/002.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:003.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/003.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:004.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/004.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:005.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/005.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:006.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/006.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:007.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/007.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:008.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/008.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:009.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/009.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:010.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/010.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:011.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/011.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:012.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/012.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:013.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/013.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:014.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/014.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:015.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/015.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:016.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/016.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:017.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/017.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:018.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/018.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:019.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/019.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:020.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/020.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:021.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/021.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:022.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/022.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:023.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/023.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:024.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/024.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:025.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/025.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:026.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/026.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:027.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/027.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:028.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/028.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:029.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/029.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:030.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/030.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:031.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/031.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:032.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/032.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:033.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/033.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:034.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/034.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:035.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/035.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:036.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/036.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:037.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/037.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:038.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/038.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:039.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/039.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:040.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/040.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:041.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/041.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:042.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/042.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:043.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/043.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:044.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/044.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:045.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/045.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:046.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/046.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:047.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/047.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:048.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/048.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:049.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/049.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:050.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/050.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:051.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/051.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:052.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/052.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:053.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/053.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:054.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/054.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:055.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/055.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:056.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/056.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:057.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/057.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:058.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/058.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:059.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/059.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:060.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/060.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:061.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/061.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:062.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/062.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:063.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/063.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]monkey2:064.png[/face]" src="https://g.csdnimg.cn/static/face/monkey2/064.png">
+        </div>
+      </div>
+      <div class="opt-box">
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="80664578">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">
+						<div class="txt-selected text-truncate">添加代码片</div>
+						<svg class="icon d-block" width="200px" height="100.00px" viewBox="0 0 2048 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path  d="M597.33333292 298.666667h853.333334L1023.99999992 725.333333 597.33333292 298.666667z"  /></svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>
+				<div class="right-box" id="rightBox" data-type="2">
+							<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+							<a data-report-click='{"mod":"1582594662_003","spm":"1001.2101.3001.4227","ab":"new"}'><input type="submit"
+									class="btn btn-sm btn-comment" value="发表评论"></a>
+				</div>
+			</div>
+		</form>
+		<input type="button" class="bt-comment-show" value="评论">
+	</div>
+	<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>            <div class="recommend-tit-mod">相关推荐</div>
+            <div class="recommend-box insert-baidu-box">
+                <div class="recommend-item-box clearfix" style="display:none"></div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://kangyucheng.blog.csdn.net/article/details/82822202"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"2","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://kangyucheng.blog.csdn.net/article/details/82822202"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://kangyucheng.blog.csdn.net/article/details/82822202" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"2","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://kangyucheng.blog.csdn.net/article/details/82822202"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.baidujs'>
+					python开源<em>聊天</em><em>机器人</em>ChatterBot&mdash;&mdash;<em>聊天</em><em>机器人</em>搭建、流程分析、源码分析
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/Kangyucheng" target="_blank"><span class="blog-title">康雨城</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">09-23</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					8649
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://kangyucheng.blog.csdn.net/article/details/82822202" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"2","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://kangyucheng.blog.csdn.net/article/details/82822202"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">ChatterBot是一个Python库，可以轻松生成对用户输入的自动响应。ChatterBot使用一系列机器学习算法来产生不同类型的响应。这使开发人员可以轻松创建<em>聊天</em><em>机器人</em>并自动与用户进行对话。本文通过阅读chatterBot官方文档，以及阅读源代码，分析出ChatterBot的结构，画出类图。并成功在本地进行实验测试。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/hl791026701/article/details/84481818"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"3","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/hl791026701/article/details/84481818"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/hl791026701/article/details/84481818" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"3","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/hl791026701/article/details/84481818"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.baidujs'>
+					<em>chatbot</em><em>聊天</em><em>机器人</em><em>技术</em><em>路线</em>汇总
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/hl791026701" target="_blank"><span class="blog-title">halxp的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">11-25</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1141
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/hl791026701/article/details/84481818" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"3","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/hl791026701/article/details/84481818"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>聊天</em><em>机器人</em>实现的<em>技术</em>途径
+大约可分为4种：1. 第一种是属于&ldquo;调用第三方API&rdquo;，也就是说核心代码和数据库不掌握在自己手里。2，3，4属于开源框架，也就是说我们可以下载其源码，采用，相对快速的自己搭建一个<em>聊天</em><em>机器人</em>，核心代码和数据库都掌握在自己手里。
+调用第三方API实现的<em>聊天</em><em>机器人</em>
+
+图灵<em>机器人</em>
+
+api.ai
+机构/作者：Google
+流行程度：24,600,000
+简介：Google收购的一...</div>
+			</a>
+		</div>
+	</div>
+</div>
+		<dl id="recommend-item-box-tow" class="recommend-item-box type_blog clearfix">
+			
+		</dl>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_41216335/11071737"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-4.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"4","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_41216335/11071737"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_41216335/11071737" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-4.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"4","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_41216335/11071737"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-4.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-4.baidujs'>
+					<em>chatbot</em><em>聊天</em><em>机器人</em>的<em>技术</em><em>路线</em>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">03-29</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_41216335/11071737" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-4.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"4","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_41216335/11071737"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-4.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-4.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>chatbot</em><em>聊天</em><em>机器人</em>的<em>技术</em><em>路线</em>，描述了<em>chatbot</em><em>聊天</em><em>机器人</em>的<em>技术</em>细节</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_course clearfix" data-url="https://edu.csdn.net/course/detail/8944"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-course-2~default~BlogCommendFromBaidu~default-5.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"5","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://edu.csdn.net/course/detail/8944"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://edu.csdn.net/course/detail/8944" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-course-2~default~BlogCommendFromBaidu~default-5.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"5","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://edu.csdn.net/course/detail/8944"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-course-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-course-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.baidujs'>
+					智能对话<em>机器人</em>开发实战视频教程
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">07-26</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://edu.csdn.net/course/detail/8944" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-course-2~default~BlogCommendFromBaidu~default-5.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"5","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://edu.csdn.net/course/detail/8944"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-course-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-course-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>机器人</em>开发实战教程、该视频课程共涵盖四大方面：
+1.案例驱动：三大智能对话<em>机器人</em>需求场景，三个完整案例；
+2.源码操作：内含完整程序源码和数据集；
+3.实战指引：覆盖智能对话<em>机器人</em>实战案例开发；
+4.系统学习：一套完整的智能对话<em>机器人</em>开发方法，三大智能对话框架；
+
+任务作业：
+1.写一个闲聊型智能助手，要求支持日常问候，无语料答案时，可以访问搜索引擎；2.写一个基于知识图谱的音乐问答<em>机器人</em>，支持基于歌曲查找歌手，基于歌手查找专辑；3.写一个智能闹钟设置<em>机器人</em>，支持闹钟设置。
+（注意：  作业需写在CSDN博客中，请把作业链接贴在评论区，老师会定期逐个批改~~）</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/huxuanlai/article/details/76853094"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"6","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/huxuanlai/article/details/76853094"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/huxuanlai/article/details/76853094" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"6","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/huxuanlai/article/details/76853094"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-6.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-6.baidujs'>
+					Github上Seq2Seq_<em>Chatbot</em>_QA中文语料和DeepQA英文语料两个对话<em>机器人</em>测试
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/huxuanlai" target="_blank"><span class="blog-title">建模分析师胡选来</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">08-07</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					9420
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/huxuanlai/article/details/76853094" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"6","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/huxuanlai/article/details/76853094"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-6.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-6.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">Seq2Seq_<em>Chatbot</em>_QA和DeepQA两个对话<em>机器人</em>测试代码：
+mkdir ~/qa
+cd ~/qa
+-------中文<em>Chatbot</em>-------
+git clone https://github.com/qhduan/Seq2Seq_<em>Chatbot</em>_QA.git
+git clone https://github.com/rustch3n/dgk_lost_conv.git
+cp d...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/88071209"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-7.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"7","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/88071209"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/88071209" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-7.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"7","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/88071209"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-7.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-7.baidujs'>
+					如何从零开始用PyTorch实现<em>Chatbot</em>？（附完整代码）
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/dQCFKyQDXYm3F8rB0" target="_blank"><span class="blog-title">AI科技大本营</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">03-01</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					4975
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/88071209" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-7.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"7","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/88071209"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-7.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-7.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">作者 | 李理，环信人工智能研发中心vp，十多年自然语言处理和人工智能研发经验。主持研发过多款智能硬件的问答和对话系统，负责环信中文语义分析开放平台和环信智能<em>机器人</em>的设计...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://aofengdaxia.blog.csdn.net/article/details/18364365"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-8.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"8","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://aofengdaxia.blog.csdn.net/article/details/18364365"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://aofengdaxia.blog.csdn.net/article/details/18364365" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-8.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"8","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://aofengdaxia.blog.csdn.net/article/details/18364365"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-8.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-8.baidujs'>
+					浅析<em>聊天</em><em>机器人</em>的<em>技术</em>和前景
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/aofengdaxia" target="_blank"><span class="blog-title">技术专栏</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">01-17</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1万+
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://aofengdaxia.blog.csdn.net/article/details/18364365" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-8.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"8","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://aofengdaxia.blog.csdn.net/article/details/18364365"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-8.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-8.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">最近利用业余时间，团队开发了一个简单的<em>聊天</em><em>机器人</em>雏形（http://robot.ly863.com)。对<em>聊天</em><em>机器人</em>的<em>技术</em>和前景有了简单的了解。大概的整理下，期望与大家分享和交流，能在这个领域内进一步的发展，能把<em>聊天</em><em>机器人</em>做的更加完善。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/cindy647/article/details/89506804"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-9.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"9","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/cindy647/article/details/89506804"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/cindy647/article/details/89506804" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-9.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"9","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/cindy647/article/details/89506804"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-9.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-9.baidujs'>
+					wechaty-微信<em>聊天</em><em>机器人</em>-调研分析
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/cindy647" target="_blank"><span class="blog-title">cindy647的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">04-25</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1万+
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/cindy647/article/details/89506804" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-9.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"9","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/cindy647/article/details/89506804"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-9.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-9.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">最近对微信<em>聊天</em><em>机器人</em>进行接入开发，以下为初步的调研分析，对wechaty有一个初步的了解并总结了各方文档
+
+第一部分：了解Wechaty
+
+一、基本介绍
+
+1、背景知识点
+
+1、Wechaty是什么？
+
+wechaty是一款开源的微信SDK，它基于微信公开的API，对接口进行了一系列的封装，提供一系列简单的接口，然后开发者可以在其之上进行微信<em>机器人</em>的开发，微信<em>机器人</em>框架。
+
+Github官方说明：...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_42181545/15575540"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-10.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"10","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_42181545/15575540"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_42181545/15575540" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-10.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"10","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_42181545/15575540"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-10.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-10.baidujs'>
+					jiujitsu_<em>chatbot</em>:建立一个对武术巴西柔术有知识的<em>聊天</em><em>机器人</em>-源码
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">03-05</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_42181545/15575540" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-10.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"10","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_42181545/15575540"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-10.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-10.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">jiujitsu_<em>chatbot</em>
+ 构建一个在武术巴西柔术方面知识渊博的<em>聊天</em><em>机器人</em>。
+ 从此Wiki页面复制的文本数据：  :</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_42171208/15473080"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-11.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"11","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_42171208/15473080"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_42171208/15473080" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-11.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"11","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_42171208/15473080"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-11.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-11.baidujs'>
+					<em>chatbot</em>_with_js：这是一个基于Javascript，HTML，CSS开发的<em>聊天</em><em>机器人</em>-源码
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">02-26</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_42171208/15473080" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromMachineLearnPai2~default-11.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"11","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://download.csdn.net/download/weixin_42171208/15473080"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-11.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-11.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">js<em>chatbot</em>
+ 这是一个使用Javascript，HTML，CSS开发的网页
+这个<em>聊天</em><em>机器人</em>是由以下人员开发和设计的：
+ Boyinapalli Sandeep Dora（19Pa1A0521）
+ Allu爸爸杜尔加&middot;普拉文（19Pa1A0503）
+ 阿雷曼达&middot;阿比耶斯（Aremanda Abhijeeth）（19Pa1A0508）
+ 此代码在repl.it网站中写入。 该网站的链接为
+ 该网站的页面旨在报告名为&ldquo; PUBG&rdquo;的多人战场游戏中的玩家
+该网站包括4页：
+ 主页（main.html）
+ 关于我们（about_us.html）
+ 与我们联系（contact_us.html）
+ 报告页面（report.html）
+ 主页是主页。 在&ldquo;关于我们&rdquo;中，有游戏的详细信息。 在&ldquo;联系我们&rdquo;页面中，可以找到公共关系部的详细信息。 在&ldquo;报告&rdquo;页面中，包含&ldquo;玩家ID&rdquo;，&ldquo;对手ID&rdquo;，&ldquo;使用</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/baidu_41617231/article/details/89187339"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-12.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"12","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/baidu_41617231/article/details/89187339"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/baidu_41617231/article/details/89187339" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-12.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"12","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/baidu_41617231/article/details/89187339"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-12.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-12.baidujs'>
+					小哥哥，检索式<em>chatbot</em>了解一下？
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/baidu_41617231" target="_blank"><span class="blog-title">胭脂草的ABC博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">04-10</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					525
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/baidu_41617231/article/details/89187339" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-12.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"12","strategy":"2~default~BlogCommendFromMachineLearnPai2~default","dest":"https://blog.csdn.net/baidu_41617231/article/details/89187339"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-12.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-12.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">小哥哥，检索式<em>chatbot</em>了解一下？
+
+
+
+夕小瑶
+
+​
+
+机器学习话题的优秀回答者
+
+215 人赞同了该文章
+
+喵喵喵，一不小心又匿了三个月，突然诈尸害不害怕(￣&nabla;￣)
+
+小夕从7月份开始收到第一场面试邀请，到9月初基本结束了校招（面够了面够了T_T），深深的意识到今年的对话系统/<em>chatbot</em>方向是真的超级火呀。从微软主打情感计算的小冰，到百度主打智能家庭（与车联网？）的DuerOS和UN...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_30897233/article/details/97079716"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-13.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"13","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_30897233/article/details/97079716"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_30897233/article/details/97079716" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-13.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"13","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_30897233/article/details/97079716"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.baidujs'>
+					利用 TensorFlow 实现上下文的 Chat-bots
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_30897233" target="_blank"><span class="blog-title">weixin_30897233的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-02</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					140
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_30897233/article/details/97079716" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-13.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"13","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_30897233/article/details/97079716"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-13.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">在我们的日常<em>聊天</em>中，情景才是最重要的。我们将使用 TensorFlow 构建一个<em>聊天</em><em>机器人</em>框架，并且添加一些上下文处理机制来使得<em>机器人</em>更加智能。
+
+
+
+&ldquo;Whole World in your Hand&rdquo; &mdash; Betty Newman-Maguire (http://www.bettynewmanmaguire.ie/)
+
+
+你是否想过一个问题，为什么那么多的<em>聊天</em><em>机器人</em>会缺乏会话情景功能？
+...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://yongzhuo.blog.csdn.net/article/details/89418850"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-14.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"14","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://yongzhuo.blog.csdn.net/article/details/89418850"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://yongzhuo.blog.csdn.net/article/details/89418850" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-14.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"14","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://yongzhuo.blog.csdn.net/article/details/89418850"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-14.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-14.baidujs'>
+					闲聊<em>机器人</em>实例一:python实现小姜<em>机器人</em><em>chatbot</em>_xiaojiang<em>聊天</em>（概述）
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/rensihui" target="_blank"><span class="blog-title">大漠帝国的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">04-20</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					2997
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://yongzhuo.blog.csdn.net/article/details/89418850" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-14.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"14","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://yongzhuo.blog.csdn.net/article/details/89418850"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-14.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-14.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">小姜<em>机器人</em>、python、tensorflow、<em>chatbot</em>、dialog、检索式、生成式、<em>聊天</em>、闲聊、对话、问答、多轮、单轮、开放、封闭、任务、垂直等等描述，都属于自动问答领域。而且已经有了比较大的应用，常见的智能手机助手、<em>聊天</em><em>机器人</em>、智能客服......
+
+一.分类
+
+    1. 依照应用场景的不同，<em>Chatbot</em>可以分为开放域<em>chatbot</em>和封闭域<em>chatbot</em>，也...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_33979745/article/details/85926649"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-15.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"15","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_33979745/article/details/85926649"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_33979745/article/details/85926649" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-15.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"15","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_33979745/article/details/85926649"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-15.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-15.baidujs'>
+					手把手教你利用微软的Bot Framework，LUIS，QnA Maker做一个简单的对话<em>机器人</em>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_33979745" target="_blank"><span class="blog-title">weixin_33979745的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">08-07</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					548
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_33979745/article/details/85926649" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-15.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"15","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_33979745/article/details/85926649"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-15.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-15.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">最近由于要参加微软亚洲研究院的夏令营，需要利用微软的服务搭建一个对话Bot，以便对俱乐部的情况进行介绍，所以现学了几天，搭建了一个简单的对话Bot，期间参考了大量的资料，尤其是下面的这篇博客：
+http://www.cnblogs.com/rocsheh/p/5846009.html
+实现的大致效果是可以询问微软俱乐部的相关情况，并且查询天气。效果演示如下：
+
+下面我会将整个过程进行详细的...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_33756418/article/details/90427819"  data-report-view='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-16.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"16","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_33756418/article/details/90427819"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_33756418/article/details/90427819" class="tit ellipsis-online ellipsis-online-1" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-16.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"16","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_33756418/article/details/90427819"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-16.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-16.baidujs'>
+					Tay继任者：微软人工智能<em>聊天</em><em>机器人</em>Zo上线测试
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_33756418" target="_blank"><span class="blog-title">weixin_33756418的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-10</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					58
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_33756418/article/details/90427819" target="_blank"  data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-16.baidujs\"}","dist_request_id":"1330147.20897.16181212299364309","index":"16","strategy":"2~default~BlogCommendFromBaidu~default","dest":"https://blog.csdn.net/weixin_33756418/article/details/90427819"}'  data-report-query='utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-16.baidujs&dist_request_id=1330147.20897.16181212299364309&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-16.baidujs'>
+				<div class="desc ellipsis-online ellipsis-online-1">微软Tay的失败已经证明人工智能的交互响应和算法比较容易受到人类的影响，从某种意义上来说Tay就像是空白的画卷，每个人都能在上面留下淡妆浓抹的色彩，或许最终并非是我们想要的结果，但是已表明随着时间的推移他们的学习和适应速度不断加快。作为Tay的继任者，微软目前正在研究Zo，那么和Tay之间又有什么差别吗？
+
+首先Zo并未直接在Twitter上进行学习，而...</div>
+			</a>
+		</div>
+	</div>
+</div>
+            </div>
+            <div class="template-box">
+                <span>©️2020 CSDN</span>
+                <span>皮肤主题: 技术黑板</span>
+                <span> 设计师:CSDN官方博客</span>
+                <span>
+                    <a href="https://blog.csdn.net/" class="back-home c-blue c-blue-hover c-blue-focus">返回首页</a>
+                </span>
+            </div>
+<div class="blog-footer-bottom" style="margin-top:10px;"></div>
+<script src="https://g.csdnimg.cn/common/csdn-footer/csdn-footer.js" data-isfootertrack="false" type="text/javascript"></script>
+<script type="text/javascript">
+    window.csdn.csdnFooter.options = {
+        el: '.blog-footer-bottom',
+        type: 2
+    }
+</script>        </main>
+<aside class="blog_container_aside">
+	<div id="asideProfile" class="aside-box">
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/tian_panda" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4121","dest":"https://blog.csdn.net/tian_panda","ab":"new"}'>
+                <img src="https://profile.csdnimg.cn/1/6/9/3_tian_panda" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div class="profile-intro-name-boxTop">
+                <a href="https://blog.csdn.net/tian_panda" class="" id="uid" title="tian_panda" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4122","dest":"https://blog.csdn.net/tian_panda","ab":"new"}'>
+                    <span class="name " username="tian_panda">tian_panda</span>
+                </a>
+                <span>
+                </span>
+                <span class="flag expert-blog">
+                <span class="bubble">CSDN认证博客专家</span>
+                </span>
+                <span class="flag company-blog">
+                <span class="bubble">CSDN认证企业博客</span>
+                </span>
+            </div>
+            <div class="profile-intro-name-boxFooter">
+                <span class="personal-home-page personal-home-years">码龄3年</span>
+                    <span class="personal-home-page">
+                    <a class="personal-home-certification" href="https://i.csdn.net/#/uc/profile?utm_source=14998968" target="_blank" title="暂无认证">
+                    <img src="https://csdnimg.cn/identity/nocErtification.png" alt="">
+                    暂无认证
+                    </a>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="18">
+            <a href="https://blog.csdn.net/tian_panda" data-report-click='{"mod":"1598321000_001","spm":"1001.2101.3001.4310"}' data-report-query="t=1">  
+                <dt><span class="count">18</span></dt>
+                <dd class="font">原创</dd>
+            </a>
+        </dl>
+        <dl class="text-center" data-report-click='{"mod":"1598321000_002","spm":"1001.2101.3001.4311"}' title="188078">
+            <a href="https://blog.csdn.net/rank/list/weekly" target="_blank">
+                <dt><span class="count">18万+</span></dt>
+                <dd class="font">周排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" title="85295">
+            <a href="https://blog.csdn.net/rank/list/total" data-report-click='{"mod":"1598321000_003","spm":"1001.2101.3001.4312"}' target="_blank">
+                <dt><span class="count">8万+</span></dt>
+                <dd class="font">总排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" style="min-width:58px" title="175082">  
+            <dt><span class="count">17万+</span></dt>
+            <dd>访问</dd>
+        </dl>
+        <dl class="text-center" title="4级,点击查看等级说明">
+            <dt><a href="https://blog.csdn.net/blogdevteam/article/details/103478461" target="_blank">
+                <img class="level" src="https://csdnimg.cn/identity/blog4.png">
+            </a>
+            </dt>
+            <dd>等级</dd>
+        </dl>
+    </div>
+    <div class="item-rank"></div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="1202">
+            <dt><span class="count">1202</span></dt>
+            <dd>积分</dd>
+        </dl>
+         <dl class="text-center" id="fanBox" title="52">
+            <dt><span class="count" id="fan">52</span></dt>
+            <dd>粉丝</dd>
+        </dl>
+        <dl class="text-center" title="67">
+            <dt><span class="count">67</span></dt>
+            <dd>获赞</dd>
+        </dl>
+        <dl class="text-center" title="19">
+            <dt><span class="count">19</span></dt>
+            <dd>评论</dd>
+        </dl>
+        <dl class="text-center" title="214">
+            <dt><span class="count">214</span></dt>
+            <dd>收藏</dd>
+        </dl>
+    </div>
+    <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box">
+        <a class="bt-button personal-letter" href="https://im.csdn.net/chat/tian_panda" target="_blank" rel="noopener">私信</a>
+        </div>
+        <div class="opt-letter-watch-box"> 
+            <a class="personal-watch bt-button" id="btnAttent" >关注</a>  
+        </div>
+    </div>
+</div>
+<div id="asideSearchArticle" class="aside-box">
+	<div class="aside-content search-comter">
+    <div class="aside-search aside-search-blog">         
+        <input type="text" class="input-serch-blog" name="" autocomplete="off" value="" id="search-blog-words" placeholder="搜博主文章">
+        <a class="btn-search-blog">
+                    <img src="//csdnimg.cn/cdn/content-toolbar/csdn-sou.png?v=1587021042">
+        </a>
+    </div>
+    </div>
+</div>
+
+
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+			<li>
+				<a href="https://blog.csdn.net/tian_panda/article/details/80569216" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/tian_panda/article/details/80569216","ab":"new"}'>
+				RPA与AI区别
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">42783</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/tian_panda/article/details/80742801" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/tian_panda/article/details/80742801","ab":"new"}'>
+				经验分布函数理解
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">41658</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/tian_panda/article/details/82113203" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/tian_panda/article/details/82113203","ab":"new"}'>
+				激活函数之ReLU函数
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">28005</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/tian_panda/article/details/80509596" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/tian_panda/article/details/80509596","ab":"new"}'>
+				联合概率
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">8334</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/tian_panda/article/details/81066822" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/tian_panda/article/details/81066822","ab":"new"}'>
+				LDA模型理解
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">8164</span>
+                </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="asideCategory" class="aside-box ">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content">
+        <ul>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7340270.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7340270.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756926.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">python</span>
+                    </span>
+                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7700985.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7700985.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756925.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">数学方面</span>
+                    </span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7712240.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7712240.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">人工智能</span>
+                    </span>
+                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7766396.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7766396.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">基础应用知识</span>
+                    </span>
+                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7771735.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7771735.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756780.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">NLP</span>
+                    </span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/tian_panda/article/details/80569216#comments_15126008" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/80569216#comments_15126008","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/80569216#comments_15126008","ab":"new"}'>RPA与AI区别</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/jingyizhaopin" class="user-name" target="_blank">jingyizhaopin: </a>
+                    <span class="code-comments">介绍的很详细哦</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/tian_panda/article/details/81066822#comments_14452291" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/81066822#comments_14452291","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/81066822#comments_14452291","ab":"new"}'>LDA模型理解</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/weixin_45887762" class="user-name" target="_blank">weixin_45887762: </a>
+                    <span class="code-comments">你好请问有相关代码嘛</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/tian_panda/article/details/81127034#comments_13656106" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/81127034#comments_13656106","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/81127034#comments_13656106","ab":"new"}'>共现关系</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/weixin_44548824" class="user-name" target="_blank">weixin_44548824: </a>
+                    <span class="code-comments">就是设窗口为5，所以把5个词拿出来做共现分析</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/tian_panda/article/details/80742801#comments_13571520" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/80742801#comments_13571520","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/80742801#comments_13571520","ab":"new"}'>经验分布函数理解</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/weixin_43555036" class="user-name" target="_blank">张景舒: </a>
+                    <span class="code-comments">你好，图片看不到呀</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/tian_panda/article/details/80742801#comments_13255415" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/80742801#comments_13255415","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/tian_panda/article/details/80742801#comments_13255415","ab":"new"}'>经验分布函数理解</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/t_r_y_0" class="user-name" target="_blank">哎哟喂噻: </a>
+                    <span class="code-comments">举个例子里面分段函数，第二段应该是x1到xk＋1吧</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="asideArchive" class="aside-box" style="display:block!important; width:300px;">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/tian_panda/article/details/82188809" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/tian_panda/article/details/82188809","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/tian_panda/article/details/82188809","ab":"new"}'>排序算法复杂度</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/tian_panda/article/details/82147881" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/tian_panda/article/details/82147881","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/tian_panda/article/details/82147881","ab":"new"}'>经典排序算法详解</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/tian_panda/article/details/82113203" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/tian_panda/article/details/82113203","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/tian_panda/article/details/82113203","ab":"new"}'>激活函数之ReLU函数</a>
+            </li>
+        </ul>
+        <div class="archive-bar"></div>
+        <div class="archive-box">
+                <div class="archive-list-item"><a href="https://blog.csdn.net/tian_panda/article/month/2018/08" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2018年</span><span class="num">22篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/tian_panda/article/month/2017/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2017年</span><span class="num">3篇</span></a></div>
+        </div>
+    </div>
+</div>
+	<div id="footerRightAds" class="isShowFooterAds">
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57"><iframe  src="https://kunpeng-sc.csdnimg.cn/?timestamp=1623163941/#/preview/7219?positionId=57&queryWord=&spm=1001.2101.3001.5001" frameborder="0" width= "300px"  height= "250px" scrolling="no" ></iframe><img class="pre-img-lasy"  data-src="https://kunyu.csdn.net/1.png?p=57&a=3963&c=7219&k=&spm=1001.2101.3001.5001&d=1&t=3&u=02add5e7909249849a9f035a8d9a3c03" style="display: block;width: 0px;height: 0px;"></div>
+		</div>
+	</div>
+    <!-- 详情页显示目录 -->
+<!--文章目录-->
+<div id="asidedirectory" class="aside-box">
+    <div class='groupfile' id="directory">
+        <h3 class="aside-title">目录</h3>
+        <div class="align-items-stretch group_item">
+            <div class="pos-box">
+            <div class="scroll-box">
+                <div class="toc-box"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-tooltip/2.4/user-tooltip.js"></script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-medal/1.0.6/user-medal.js"></script>    </div>
+<div class="recommend-right  align-items-stretch clearfix" id="rightAside" data-type="recommend">
+    <aside class="recommend-right_aside">
+        <div id="recommend-right" >
+                        <div class='flex-column aside-box groupfile' id="groupfile">
+                <div class="groupfile-div">
+                <h3 class="aside-title">目录</h3>
+                <div class="align-items-stretch group_item">
+                    <div class="pos-box">
+                        <div class="scroll-box">
+                            <div class="toc-box"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+                <div id="recommendAdBox">
+                    <div id="kp_box_479" data-pid="479"><iframe  src="https://kunpeng-sc.csdnimg.cn/?timestamp=1623163941/#/preview/7219?positionId=479&queryWord=&spm=1001.2101.3001.4834" frameborder="0" width= "300px"  height= "250px" scrolling="no" ></iframe><img class="pre-img-lasy"  data-src="https://kunyu.csdn.net/1.png?p=479&a=3963&c=7219&k=&spm=1001.2101.3001.4834&d=1&t=3&u=1491aa028d56493986112c68a4a6104c" style="display: block;width: 0px;height: 0px;"></div>
+                </div>
+            <div class='aside-box kind_person d-flex flex-column'>
+                    <h3 class="aside-title">分类专栏</h3>
+                    <div class="align-items-stretch kindof_item" id="kind_person_column">
+                        <div class="aside-content">
+                            <ul>
+                                <li class="">
+                                    <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7340270.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7340270.html","ab":"new"}'>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756926.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="title oneline">
+                                            <span class="text">python</span>
+                                        </span>
+                                        <span class="count float-right">7篇</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7700985.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7700985.html","ab":"new"}'>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756925.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="title oneline">
+                                            <span class="text">数学方面</span>
+                                        </span>
+                                        <span class="count float-right">2篇</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7712240.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7712240.html","ab":"new"}'>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="title oneline">
+                                            <span class="text">人工智能</span>
+                                        </span>
+                                        <span class="count float-right">9篇</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7766396.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7766396.html","ab":"new"}'>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="title oneline">
+                                            <span class="text">基础应用知识</span>
+                                        </span>
+                                        <span class="count float-right">7篇</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="clearfix" target="_blank" href="https://blog.csdn.net/tian_panda/category_7771735.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/tian_panda/category_7771735.html","ab":"new"}'>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756780.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="title oneline">
+                                            <span class="text">NLP</span>
+                                        </span>
+                                        <span class="count float-right">5篇</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+</div>
+<div class="mask-dark"></div>
+<script>
+    var articleId = 80664578;
+    var commentscount = 0;
+    var curentUrl = "https://blog.csdn.net/tian_panda/article/details/80664578";
+    var myUrl = "https://my.csdn.net/";
+    var highlight = ["chatbot","聊天","机器人","技术","路线"];//高亮数组
+    var isRecommendModule = true;
+    var isBaiduPre = true;
+    var baiduCount = 3;
+    var share_card_url = "https://blog.csdn.net/tian_panda/article/shareArticleCardPage?article_id=80664578"
+	var articleType = 1;
+    var baiduKey = "chatbot聊天机器人技术路线";
+    var userNewReport = false;
+    var needInsertBaidu = true;
+    var recommendRegularDomainArr = ["blog.csdn.net/.+/article/details/","download.csdn.net/download/","edu.csdn.net/course/detail/","ask.csdn.net/questions/","bbs.csdn.net/topics/","www.csdn.net/gather_.+/"]
+    var codeStyle = "";
+    var baiduSearchType = "utm_term";
+    var canRead = true;
+    var blogMoveHomeArticle = false;
+    var showPcWindowAd = false;
+    var showSearchText = "";
+    var linkPage = true;
+    var articleSource = 1;
+    var articleReport = '{"pid": "blog", "spm":"1001.2101"}';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<div class="skin-boxshadow"></div>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+    <!-- 富文本柱状图  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/chart/chart.css"/>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/chart/lib/chart.min.js"></script>
+    <script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/chart/widget2chart.js"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_highlight-db1e81323a.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_common-906586e915.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            qr: {
+                isShow: false,
+            },
+            guide: {
+                isShow: true
+            }
+        }
+    }
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            window.csdn.userLogin.loadAjax(function(res){
+                if(userNewReport){
+                    showReportNew(false,articleTitles);
+                }else{
+                    showReport(false,articleTitles);
+                }
+            })
+        });
+    })
+</script>
+    <script src="https://g.csdnimg.cn/baidu-search/1.0.9/baidu-search.js"  type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/download/old_static/js/qrcode.js"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-cc21cbaf03.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/detail-180dec70dc.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/user-ordercart/1.0.6/user-ordercart.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/column-78261cfea6.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/side-toolbar/3.0/side-toolbar.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/common/shop-window-v2/shop-window.js" type="text/javascript"></script>
+<script>
+    var shopUserName = username;
+    ;$(function(){
+        window.csdn.shop.show({
+            userName: shopUserName,
+            topEl: $("#csdn-shop-window-top"),
+            bottomEl: $("#csdn-shop-window"),
+            callBack: function(res){
+                if(!res.top){
+                    $("#blogColumnPayAdvert").css({"display":"block"})
+                    $("#csdn-shop-window-top").css({"display":"none"})
+                }
+            }
+        })
+    })
+</script>
+<script src="https://g.csdnimg.cn/copyright/1.0.3/copyright.js" type="text/javascript"></script>
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+</script>
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/user-login/2.3.2/user-login.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/login-box/1.1.4/login-box.js"></script></html>
